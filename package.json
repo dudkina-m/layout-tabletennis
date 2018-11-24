@@ -1,5 +1,5 @@
 {
-  "name": "project-name",
+  "name": "layout-tabletennis",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -7,12 +7,12 @@
     "build": "gulp build",
     "start": "gulp build & gulp watch"
   },
-  "author": "Omertex",
+  "author": "dudkina.m.94@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "csscomb": "^3.1.7",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
