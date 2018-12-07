@@ -1,0 +1,49 @@
+extends root/layout
+
+block container
+    include include/header
+    .content
+        .container
+            .row
+                .sidebar.col-md-3
+                    include include/categories-menu
+                .main-content.col-md-9(style='padding: 0 30px;')
+                    ul.breadcrumb
+                        li
+                            a(href='/') Главная
+                        |  /
+                        li.active Бренды
+                    h1 Бренды
+                    ul.brands__content
+                        li.brands__card(style="background-image: url('img/brand-1.png')")
+                            p Butterfly
+                        li.brands__card(style="background-image: url('img/brand-2.png')")
+                            p Mizuno
+                        li.brands__card(style="background-image: url('img/brand-3.png')")
+                            p Stiga
+                        li.brands__card(style="background-image: url('img/brand-4.png')")
+                            p Donic
+                        li.brands__card(style="background-image: url('img/brand-5.png')")
+                            p Yasaka
+                        li.brands__card(style="background-image: url('img/brand-1.png')")
+                            p Butterfly
+                        li.brands__card(style="background-image: url('img/brand-2.png')")
+                            p Mizuno
+                        li.brands__card(style="background-image: url('img/brand-3.png')")
+                            p Stiga
+                        li.brands__card(style="background-image: url('img/brand-4.png')")
+                            p Donic
+                        li.brands__card(style="background-image: url('img/brand-5.png')")
+                            p Yasaka
+                        li.brands__card(style="background-image: url('img/brand-1.png')")
+                            p Butterfly
+                        li.brands__card(style="background-image: url('img/brand-2.png')")
+                            p Mizuno
+                        li.brands__card(style="background-image: url('img/brand-3.png')")
+                            p Stiga
+                        li.brands__card(style="background-image: url('img/brand-4.png')")
+                            p Donic
+                        li.brands__card(style="background-image: url('img/brand-5.png')")
+                            p Yasaka
+
+    include include/footer

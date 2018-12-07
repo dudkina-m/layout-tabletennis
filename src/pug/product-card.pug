@@ -1,0 +1,122 @@
+extends root/layout
+
+block container
+    include include/header
+    .content
+        .container
+            .row
+                .sidebar.col-md-3
+                    include include/categories-menu
+                .main-content.col-md-9(style='padding: 0 30px;')
+                    ul.breadcrumb
+                        li
+                            a(href='/') Главная
+                        |  /
+                        li
+                            a(href='#') Каталог
+                        |  /
+                        li
+                            a(href='#') Спортивная одежда
+                        |  /
+                        li.active PRIMORAC CARBON JAPAN
+                    .row
+                        .col-12.col-md-5
+                            .fotoblock
+                                a.single_image(href='img/product-img.jpg')
+                                    img(src='img/product-img.jpg' alt='')
+                                .fotoblock__thumbnails
+                                    a(href="#")
+                                        img(src="img/product-img.jpg" alt)
+                                    a(href="#")
+                                        img(src="img/product-img.jpg" alt)
+                                    a(href="#")
+                                        img(src="img/product-img.jpg" alt)
+                                    a(href="#")
+                                        img(src="img/product-img.jpg" alt)
+                                    a.video(href="#")
+                                        img(src="img/video-thumb.png" alt)
+                        .col-12.col-md-7
+                            .description
+                                .description__in.sale(data-text="-25%")
+                                    a.shk-item__star.fa.fa-star(href="#")
+                                    .shk-item_nocards.shk-item(style='box-shadow: none;')
+                                        .description__model PRIMORAC CARBON JAPAN
+                                        .description__inf
+                                            .row
+                                                .col-md-6
+                                                    p ID 7445051
+                                                    p Butterfly
+                                                    p Модель: Jun Mizutani
+                                                    p 2013
+
+                                                .col-md-6
+                                                    .description__price
+                                                        span.shk-first-price 20 150 Р
+                                                        span.shk-percent -25%
+                                                        p.shk-price 7 380 Р
+
+                                        .description__choice
+                                            span Цвет:
+                                            .shk-item__choice
+                                                input(id="color-red" type="radio" name="color")
+                                                label.shk-item__choice-label(for="color-red") красный
+                                            .shk-item__choice.disabled
+                                                input(id="color-black" type="radio" name="color")
+                                                label.shk-item__choice-label(for="color-black") черный
+                                            .shk-item__choice.disabled
+                                                input(id="color-blue" type="radio" name="color")
+                                                label.shk-item__choice-label(for="color-blue") синий
+                                            .shk-item__choice
+                                                input(id="color-purple" type="radio" name="color")
+                                                label.shk-item__choice-label(for="color-purple") фиолетовый
+                                        .description__choice
+                                            span Форма ручки:
+                                            .shk-item__choice
+                                                input(id="form1" type="radio" name="color")
+                                                label.shk-item__choice-label(for="form1") AN
+                                            .shk-item__choice
+                                                input(id="form2" type="radio" name="color")
+                                                label.shk-item__choice-label(for="form2") FL
+                                            .shk-item__choice
+                                                input(id="form3" type="radio" name="color")
+                                                label.shk-item__choice-label(for="form3") ST
+                                        .description__size-table
+                                            a.shk-item__choice-label(href="#" data-toggle="modal" data-target="#sizeTable") Таблица размеров
+                                        .description__count
+                                            span Количество:
+                                            .shk-item__count
+                                                button.dec -
+                                                input(type="number" min="1" max="100" value="1")
+                                                button.inc +
+                                            button.btn.btn-lg.btn-red(style="margin-top: 15px") В корзину
+
+                    .categories.product__tabs
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active(role='presentation')
+                                a(href='#recommnded' aria-controls='recommnded' role='tab' data-toggle='tab') Мы рекомендуем
+                            li(role='presentation')
+                                a(href='#new' aria-controls='new' role='tab' data-toggle='tab') Новинки
+                            li(role='presentation')
+                                a(href='#sale-hits' aria-controls='sale-hits' role='tab' data-toggle='tab') Хиты продаж
+                            li(role='presentation')
+                                a(href='#sales' aria-controls='sales' role='tab' data-toggle='tab') Скидки
+                        .tab-content
+                            #recommnded.tab-pane.fade.in.active(role='tabpanel') ...
+                            #new.tab-pane.fade(role='tabpanel') ...
+                            #sale-hits.tab-pane.fade(role='tabpanel') ...
+                            #sales.tab-pane.fade(role='tabpanel') ...
+
+
+    include include/footer
+    #sizeTable.modal.fade(tabindex='-1' role='dialog' aria-labelledby='changePasswordLabel')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='23px' height='23px')
+                            path(fill-rule='evenodd' fill='rgb(29, 97, 178)' d='M23.001,21.564 L21.564,23.001 L11.500,12.938 L1.436,23.001 L-0.001,21.564 L10.062,11.500 L-0.001,1.436 L1.436,-0.001 L11.500,10.062 L21.564,-0.001 L23.001,1.436 L12.938,11.500 L23.001,21.564 Z')
+                .modal-body
+                    img(src="img/sizes.png" alt)
+                .modal-footer
+
+

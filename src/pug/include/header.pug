@@ -1,0 +1,65 @@
+.header
+    .header-top
+        .container
+            .navbox
+                .entry
+                    a.favorites__link(href="favourites.html") Избранное&nbsp;
+                        span (5)
+                    a.btn.btn-sm.btn-blue(href='personal-account.html') Ivan
+                    a.btn.btn-sm.btn-red(href='#') Выход
+                a#touch-navbox.mobile-navbox(href='#')
+                    i.fa.fa-bars
+                    | МЕНЮ
+                ul.nav
+                    li.first.active
+                        a(href='#') Главная
+                    li
+                        a(href='#') О компании
+                    li
+                        a(href='brands.html') Бренды
+                    li
+                        a(href='#') Как сделать заказ
+                    li
+                        a(href='#') Прайс-лист
+                    li
+                        a(href='#') Скидки
+                    li
+                        a(href='#') Контакты
+    .container
+        .header-row
+            .row
+                .col-md-3.col-sm-6.col-xs-12
+                    .logo
+                        a(href='/')
+                            img(src='img/logo.png')
+                .col-md-2.col-sm-3.col-xs-6.text-right
+                    // noindex
+                    a.btn.btn-lg.btn-blue(href='#' data-toggle="modal" data-target="#backCall") Обратный звонок
+                    // /noindex
+                .col-md-2.col-sm-3.col-xs-6
+                    a.btn.btn-lg.btn-blue(href='#') Написать нам
+                .col-md-5.col-xs-12
+                    .phone
+                        i.fa.fa-phone
+                        span 8 495
+                        |  772-21-18 /
+                        span 8 499
+                        |  975-50-91
+        .toolbar
+            form.toolbar__search(action='#' method='get')
+                .toolbar__search-row
+                    .toolbar__search-cell
+                        input(type='hidden' name='id' value='')
+                        input#search.textfield(type='text' name='search' value='' placeholder='Что ищем?')
+                        select.toolbar__search-select
+                            option(disabled selected) Поиск по категориям
+                    .toolbar__search-cell
+                        button(type='submit') Найти
+            .toolbar__basket
+                .toolbar__basket-row
+                    .toolbar__basket-cell
+                        i.toolbar__basket-ico
+                    #shopCart.toolbar__basket-cell
+                        | В корзине&nbsp;
+                        a(href='basket.html') 2 товара
+                        | &nbsp;на сумму 10000 рублей

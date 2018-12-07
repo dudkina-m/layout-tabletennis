@@ -1,0 +1,30 @@
+.slider {
+  &__text {
+    padding-left: 50px;
+    position: absolute;
+    text-align: left;
+    top: 30%;
+    width: 100%;
+
+    h1 {
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      display: block;
+      text-decoration: none;
+      width: max-content;
+    }
+  }
+
+  &.owl-carousel .owl-dot span {
+    background: url(../img/bullets.png) no-repeat;
+    border-radius: 50%;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    width: 20px;
+  }
+
+  &.owl-carousel .owl-dot.active span {
+    background-position: -26px 0;
+  }
+}

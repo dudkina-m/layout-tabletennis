@@ -1,0 +1,41 @@
+.fotoblock {
+  &__thumbnails {
+    margin-top: 10px;
+    overflow: hidden;
+
+    .owl-stage {
+      display: flex;
+    }
+
+    .owl-nav {
+      display: none;
+    }
+
+    a {
+      border: 1px solid rgba(0, 0, 0, .1);
+      display: block;
+      margin: 5px;
+      position: relative;
+      &:after {
+        content: none !important;
+      }
+
+      &.video {
+      }
+
+      img {
+        height: 40px;
+        max-width: 50px !important;
+
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.product__tabs {
+  .nav-tabs {
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+}

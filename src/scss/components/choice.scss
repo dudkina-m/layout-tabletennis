@@ -1,0 +1,128 @@
+.shk-item__choice {
+  cursor: pointer;
+  display: inline-block;
+  input[type='radio'] {
+    display: none;
+
+    &:checked + label {
+      background-color: #2069be;
+      border-color: #2069be;
+      color: #fff;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    label {
+      opacity: .5;
+      text-decoration: line-through;
+    }
+  }
+
+  &-label {
+    border: 1px solid #4c4c4c;
+    border-radius: 5px;
+    color: #4c4c4c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 10px;
+    margin: 0 2.5px;
+    padding: 5px !important;
+
+    &:before,
+    &:after {
+      content: none !important;
+    }
+  }
+}
+
+.shk-item__count {
+  display: flex;
+  input {
+    border-color: #4c4c4c;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    color: #4c4c4c;
+    height: 25px;
+    padding: 0 3px;
+    text-align: center;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+
+    -webkit-appearance: none;
+  }
+
+  .dec,
+  .inc {
+    background-color: transparent;
+    border: 1px solid #4c4c4c;
+    font-size: 16px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .dec {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .inc {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+
+.shk-item__extra {
+  display: none;
+}
+
+.shk-item__property {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.description {
+  &__choice {
+    .shk-item__choice {
+      input[type='radio'] {
+        &:checked + label {
+          background-color: #fff;
+          border-color: #fff;
+          color: #d52c3e;
+        }
+      }
+    }
+
+    .shk-item__choice-label {
+      border-color: #fff;
+      color: #fff;
+    }
+  }
+
+  &__count {
+    .shk-item__count {
+      justify-content: center;
+    }
+    input,
+    .dec,
+    .inc {
+      border-color: #fff;
+    }
+
+    input {
+      color: #1d61b2;
+    }
+  }
+
+  &__size-table {
+    margin: 15px 0;
+    .shk-item__choice-label {
+      border-color: #fff;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

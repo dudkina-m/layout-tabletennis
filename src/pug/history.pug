@@ -1,0 +1,57 @@
+extends root/layout
+
+block container
+    include include/header
+    .content
+        .container
+            .row
+                .sidebar.col-md-3
+                    include include/categories-menu
+                .main-content.col-md-9(style='padding: 0 30px;')
+                    ul.breadcrumb
+                        li
+                            a(href='/') Главная
+                        |  /
+                        li.active История заказов
+                    h1 История заказов
+                    #accordion.panel-group.history(role='tablist' aria-multiselectable='true')
+                        .panel.panel-default
+                            #headingOne.panel-heading(role='tab')
+                                .history__details
+                                    span Заказ №329
+                                    | &nbsp;от 07.11.2018
+                                .history__details 3 товара на сумму&nbsp;
+                                    span.sum 46 500 Р
+                                .history__details Состояние:&nbsp;
+                                    span.status оплачен
+                                h4.panel-title
+                                    a.btn.btn-sm.btn-blue(role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                                        | Детали
+                            #collapseOne.panel-collapse.collapse.in(role='tabpanel' aria-labelledby='headingOne')
+                                .panel-body
+                                    .history__container
+                                        img(src="img/product-img.jpg" alt)
+                                        .history__description
+                                            .shk-item__brend Накладки Butterfly
+                                            a.product__text(href='product-card.html') Gergely Alpha
+                                            .history__product-info
+                                                p Цвет: Красный
+                                                p Толщина: 1.8
+                                        .history__description
+                                            p Цена за штуку:
+                                            p.price 17 250 Р
+                                            span.first-price.line-through 24 360 Р
+                                            span -25%
+                                        .history__description
+                                            p Итого:
+                                            p.price 34 500 Р
+                                            span.first-price.line-through 48 720 Р
+                                            span -25%
+                                        .history__description
+                                            a.btn.btn-lg.btn-red В корзину
+                                    .basket__total
+                                        | Итого 1 товар на сумму:
+                                        span(style="font-weight: bold") 47 700 Р
+
+
+    include include/footer

@@ -1,0 +1,138 @@
+extends root/layout
+
+block container
+    include include/header
+    .content
+        .container
+            .row
+                .sidebar.col-md-3
+                    include include/categories-menu
+                .main-content.col-md-9(style='padding: 0 30px;')
+                    .basket__steps
+                        ul.nav.nav-tabs.basket__tabs(role='tablist')
+                            li.active(role='presentation')
+                                a(href='#basket' aria-controls='basket' role='tab' data-toggle='tab')
+                                    span.basket__step Шаг 1
+                                    span.basket__step-name Корзина
+                            li(role='presentation')
+                                a(href='#delivery' aria-controls='delivery' role='tab' data-toggle='tab')
+                                    span.basket__step Шаг 2
+                                    span.basket__step-name Доставка
+                            li(role='presentation')
+                                a(href='#contacts' aria-controls='contacts' role='tab' data-toggle='tab')
+                                    span.basket__step Шаг 3
+                                    span.basket__step-name Контакты
+                            li(role='presentation')
+                                a(href='#pay' aria-controls='pay' role='tab' data-toggle='tab')
+                                    span.basket__step Шаг 4
+                                    span.basket__step-name Оплата
+                        .tab-content
+                            #basket.tab-pane.fade.in.active(role='tabpanel')
+                                h1 Корзина
+                                #shopCart.basket.table-responsive
+                                    form
+                                        fieldset
+                                            table
+                                                thead
+                                                    tr
+                                                        th &nbsp;
+                                                        th Наименование
+                                                        th Кол-во
+                                                        th Сумма
+                                                        th &nbsp;
+                                                tbody
+                                                    tr
+                                                        td.cell-img
+                                                            a(href='#')
+                                                                img(src='img/product-img.jpg' alt='' width='120')
+                                                        td.txt
+                                                            .basket__brend Спец. предложения
+                                                            .basket__model
+                                                                | СТОЛ BUTTERFLY PLAYBACK ROLLAWAY OUTDOOR 5 мм синий
+                                                                br
+                                                                small
+                                                                div
+                                                                    small
+                                                            .basket__price 47 700 Р
+                                                        td.cell-counter
+                                                            .counter
+                                                                input.shk-count(type='text' size='2' name='count[]' maxlength='3' title='изменить количество' value='1')
+                                                        td
+                                                            | 47 700
+                                                            span Р
+                                                        td.cell-dell
+                                                            a.shk-del(href='#' title='Удалить')
+                                                                img(src='img/basket-del.png' alt='')
+
+
+
+                            #delivery.tab-pane.fade(role='tabpanel')
+                                h1 Способ доставки
+                                .form__group
+                                    input#delivery1(checked='checked' type='radio' name='delivery' value='Самовывоз')
+                                    label(for='delivery1') Самовывоз
+                                .form__group
+                                    input#delivery2(type='radio' name='delivery' value='Курьером по Москве')
+                                    label(for='delivery2') Курьером по Москве
+                                .form__group
+                                    input#delivery3(type='radio' name='delivery' value='Почтой России')
+                                    label(for='delivery3') Почтой России
+                                .form__group
+                                    input#delivery4(type='radio' name='delivery' value='Доставка по России транспортными компаниями ')
+                                    label(for='delivery4') Доставка по России транспортными компаниями
+                                .form__group
+                                    input#delivery5(type='radio' name='delivery' value='Доставка по России курьерскими службами')
+                                    label(for='delivery5') Доставка по России курьерскими службами
+                            #contacts.tab-pane.fade(role='tabpanel')
+                                h1 Контактная информация
+                                .row
+                                    .col-xs-12.col-md-6
+                                        input.hide(type='text' name='nospam:blank' value='')
+                                        input(type='hidden' name='order' value='1')
+                                        .form__group
+                                            input(type='text' name='fullname' placeholder='ФИО *' value='')
+                                        .form__group
+                                            input(type='text' name='email' placeholder='E-mail *' value='')
+                                        .form__group
+                                            input(type='text' name='phone' placeholder='Телефон *' value='')
+                                        .form__group
+                                            input(type='text' name='mobilephone' placeholder='Доп. телефон' value='')
+                                        .form__group
+                                            input(type='text' name='zip' placeholder='Индекс *' value='')
+                                        .form__group
+                                            input(type='text' name='city' placeholder='Город *' value='')
+                                        .form__group
+                                            input(type='text' name='street' placeholder='Улица *' value='')
+                                        .form__group
+                                            .row
+                                                .col-xs-4
+                                                    input(type='text' name='house' placeholder='Дом *' value='')
+                                                .col-xs-4
+                                                    input(type='text' name='room' placeholder='Кв.' value='')
+                                                .col-xs-4
+                                                    input(type='text' name='corps' placeholder='Корп.' value='')
+                                                br
+                                        .form__hint * Поля отмеченные звездочкой обязательны для заполнения
+                            #pay.tab-pane.fade(role='tabpanel')
+                                h1 Способ оплаты
+                                .form__group
+                                    input#payment1(checked='checked' type='radio' name='payment' value='Наличными')
+                                    label(for='payment1') Наличными
+                                .form__group
+                                    input#payment2(type='radio' name='payment' value='На карту')
+                                    label(for='payment2') На карту
+                                .form__group
+                                    input#payment3(type='radio' name='payment' value='На расчетный счет')
+                                    label(for='payment3') На расчетный счет
+                                .form__group
+                                    input#payment4(type='radio' name='payment' value='Банковской картой')
+                                    label(for='payment4') Банковской картой
+                        .basket__total
+                            | Итого 1 товар на сумму:
+                            span(style="font-weight: bold") 47 700 Р
+                        a#toDelivery.basket__next(href="#delivery" aria-controls='basket' role='tab' data-toggle='tab') К доставке
+                        a#toContacts.basket__next(href="#contacts" aria-controls='delivery' role='tab' data-toggle='tab') К контактам
+                        a#toPays.basket__next(href="#pay" aria-controls='contacts' role='tab' data-toggle='tab') К оплате
+                        a#order.basket__next(href="#") Оформить заказ
+
+    include include/footer

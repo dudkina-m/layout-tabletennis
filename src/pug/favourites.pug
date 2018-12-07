@@ -1,0 +1,43 @@
+extends root/layout
+
+block container
+    include include/header
+    .content
+        .container
+            .row
+                .sidebar.col-md-3
+                    include include/categories-menu
+                .main-content.col-md-9(style='padding: 0 30px;')
+                    ul.breadcrumb
+                        li
+                            a(href='/') Главная
+                        |  /
+                        li.active Избранное
+                    h1 Избранное
+
+                    .history__container
+                        a.close(href="#")
+                            svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='11px')
+                                path(fill-rule='evenodd' opacity='0.8' fill='rgb(115, 116, 117)' d='M10.450,9.743 L9.742,10.450 L5.500,6.207 L1.257,10.450 L0.550,9.743 L4.793,5.500 L0.550,1.257 L1.257,0.550 L5.500,4.793 L9.742,0.550 L10.450,1.257 L6.207,5.500 L10.450,9.743 Z')
+
+                        img(src="img/product-img.jpg" alt)
+                        .history__description
+                            .shk-item__brend Накладки Butterfly
+                            a.product__text(href='product-card.html') Gergely Alpha
+                            .history__product-info
+                                p Цвет: Красный
+                                p Толщина: 1.8
+                        .history__description
+                            p Цена за штуку:
+                            p.price 17 250 Р
+                            span.first-price.line-through 24 360 Р
+                            span -25%
+                        .history__description
+                            p Итого:
+                            p.price 34 500 Р
+                            span.first-price.line-through 48 720 Р
+                            span -25%
+                        .history__description
+                            a.btn.btn-lg.btn-red В корзину
+
+    include include/footer

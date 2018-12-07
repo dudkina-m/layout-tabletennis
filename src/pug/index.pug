@@ -1,6 +1,250 @@
 extends root/layout
 
 block container
-    .container
-        p hello world
-        //include include/footer
+    include include/header
+    .content
+        ul.slider.owl-carousel
+            li
+                a(href='#')
+                    img(src='img/slider-bg.png' alt='Tenergy 05 Hard')
+                .container
+                    .slider__text
+                        h1 Летние скидки #[br] на весь ассортимент
+                        a.btn.btn-red(href="#") Узнать подробнее
+
+            li
+                a(href='#')
+                    img(src='img/slider-bg.png' alt='Tenergy 05 Hard')
+                .container
+                    .slider__text
+                        h1 Летние скидки #[br] на весь ассортимент
+                        a.btn.btn-red(href="#") Узнать подробнее
+        .container
+            .catalog-box
+                a#touch-catalog-box.mobile-navbox(href='#')
+                    i.fa.fa-bars
+                    | Каталог
+                ul.catalog
+                    li.first
+                        a(href='catalog.html') Накладки
+                    li
+                        a(href='#') Основания
+                    li
+                        a(href='#') Ракетки готовые
+                    li
+                        a(href='#') Мячи
+                    li
+                        a(href='#') Клей
+                    li
+                        a(href='#') Принадлежности
+                    li
+                        a(href='#') Сумки, чехлы
+                    li
+                        a(href='#') Спортивная одежда
+                    li
+                        a(href='#') Спортивная обувь
+                    li
+                        a(href='#') Оборудование для залов
+                    li
+                        a(href='#') Всепогодные столы
+                    li
+                        a(href='#') Роботы
+                    li
+                        a(href='brands.htmlx') Бренды
+                    li.last
+                        a(href='#') Скидки
+            .categories
+                ul.nav.nav-tabs(role='tablist')
+                    li.active(role='presentation')
+                        a(href='#recommnded' aria-controls='recommnded' role='tab' data-toggle='tab') Мы рекомендуем
+                    li(role='presentation')
+                        a(href='#new' aria-controls='new' role='tab' data-toggle='tab') Новинки
+                    li(role='presentation')
+                        a(href='#sale-hits' aria-controls='sale-hits' role='tab' data-toggle='tab') Хиты продаж
+                    li(role='presentation')
+                        a(href='#sales' aria-controls='sales' role='tab' data-toggle='tab') Скидки
+                .tab-content
+                    #recommnded.tab-pane.fade.in.active(role='tabpanel')
+                        .wrapper
+                            - for (var i = 0; i < 4; i++) {
+                            .shk-item.shk-item_sale(data-text="-25%")
+                                a.shk-item__star.fa.fa-star(href="#")
+                                .shk-item__img
+                                    a(href='#' title='Чехол BUTTERFLY 1950')
+                                        img(src='img/product-img.jpg' alt='Gergely Alpha')
+                                    .shk-item__brend Накладки Butterfly
+                                    a.product__text(href='product-card.html') Gergely Alpha
+                                    .shk-item__price.fake
+                                        // no need to add events, but need to add price data (only for layout)
+                                        span.price_left
+                                            span.shk-price 9 540
+                                            |  Р
+                                        button В корзину
+                                .shk-item__extra
+                                    .shk-item__property
+                                        span Цвет: #[br]
+                                        .shk-item__choice
+                                            input(id="color-red" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-red") красный
+                                        .shk-item__choice.disabled
+                                            input(id="color-black" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-black") черный
+                                        .shk-item__choice.disabled
+                                            input(id="color-blue" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-blue") синий
+                                        .shk-item__choice
+                                            input(id="color-purple" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-purple") фиолетовый
+                                    .shk-item__property
+                                        span Форма ручки: #[br]
+                                        .shk-item__choice
+                                            input(id="form1" type="radio" name="color")
+                                            label.shk-item__choice-label(for="form1") AN
+                                        .shk-item__choice
+                                            input(id="form2" type="radio" name="color")
+                                            label.shk-item__choice-label(for="form2") FL
+                                        .shk-item__choice
+                                            input(id="form3" type="radio" name="color")
+                                            label.shk-item__choice-label(for="form3") ST
+                                    .shk-item__property
+                                        span Количество:
+                                        .shk-item__count
+                                            button.dec -
+                                            input(type="number" min="1" max="100" value="1")
+                                            button.inc +
+                                    .shk-item__price-first
+                                        span.line-through 24 360 Р
+                                        span -25%
+                                    .shk-item__price
+                                        span.price_left
+                                            span.shk-price 9 540
+                                            |  Р
+                                        button В корзину
+                            -}
+                            - for (var i = 0; i < 4; i++) {
+                            .shk-item.shk-item_new(data-text="Новинка")
+                                a.shk-item__star.shk-item__star_chosen.fa.fa-star(href="#")
+                                .shk-item__img
+                                    a(href='#' title='Чехол BUTTERFLY 1950')
+                                        img(src='img/product-img.jpg' alt='Gergely Alpha')
+                                    .shk-item__brend Накладки Butterfly
+                                    a.product__text(href='product-card.html') Gergely Alpha
+                                    .shk-item__price.fake
+                                        // no need to add events, but need to add price data (only for layout)
+                                        span.price_left
+                                            span.shk-price 9 540
+                                            |  Р
+                                        button В корзину
+                                .shk-item__extra
+                                    .shk-item__property
+                                        span Цвет: #[br]
+                                        .shk-item__choice
+                                            input(id="color-red1" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-red1") красный
+                                        .shk-item__choice.disabled
+                                            input(id="color-black1" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-black1") черный
+                                        .shk-item__choice.disabled
+                                            input(id="color-blue1" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-blue1") синий
+                                        .shk-item__choice
+                                            input(id="color-purple1" type="radio" name="color")
+                                            label.shk-item__choice-label(for="color-purple1") фиолетовый
+                                    .shk-item__property
+                                        span Форма ручки: #[br]
+                                        .shk-item__choice
+                                            input(id="form11" type="radio" name="color")
+                                            label.shk-item__choice-label(for="form11") AN
+                                        .shk-item__choice
+                                            input(id="form21" type="radio" name="color")
+                                            label.shk-item__choice-label(for="form21") FL
+                                        .shk-item__choice
+                                            input(id="form31" type="radio" name="color")
+                                            label.shk-item__choice-label(for="form31") ST
+                                    .shk-item__property
+                                        span Количество:
+                                        .shk-item__count
+                                            button.dec -
+                                            input(type="number" min="1" max="100" value="1")
+                                            button.inc +
+                                    .shk-item__price
+                                        span.price_left
+                                            span.shk-price 9 540
+                                            |  Р
+                                        button В корзину
+                            -}
+                            a.show-more(href="#") показать еще
+                                img(src="img/show-more.png")
+                    #new.tab-pane.fade(role='tabpanel') ...
+                    #sale-hits.tab-pane.fade(role='tabpanel') ...
+                    #sales.tab-pane.fade(role='tabpanel') ...
+            .news__container
+                .row
+                    .col-xs-12.col-md-4.news
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active(role='presentation')
+                                a(href='#news' aria-controls='news' role='tab' data-toggle='tab') Новости
+                            li(role='presentation')
+                                a(href='#anonses' aria-controls='anonses' role='tab' data-toggle='tab') Анонсы
+                        .tab-content
+                            #news.tab-pane.fade.in.active(role='tabpanel')
+                                .news__item
+                                    a(href="#") В продажу поступили профессиональные ракетки мирового бренда
+                                    p.date 25 марта 2014
+                                .news__item
+                                    a(href="#") В продажу поступили профессиональные ракетки мирового бренда
+                                    p.date 25 марта 2014
+
+                            #anonses.tab-pane.fade.in(role='tabpanel') ...
+                    .col-xs-12.col-md-8
+                        h2 В нашем магазине вы можете приобрести&nbsp;<br>всё для настольного тенниса!
+                        p Основными направлениеми деятельности нашей компании, основанной в 1993-м году, являются настольный теннис, большой теннис и бадминтон. ООО "Эльгрей" - фирма со сложившейся корпоративной культурой, с гарантированно высокой степенью надежности по отношению к своим партнерам и клиентам. Ждем Вас в нашем экипировочном центре на Красноворотском проезде д.3Б строение 3!
+                        p #[strong Также Вы всегда можете сделать свой заказ через наш интернет-магазин.&nbsp;<br>Мы всегда рады помочь Вам!]
+            #home-brands.brands
+                .brands__card(style="background-image: url('img/brand-1.png')")
+                    p Butterfly
+                .brands__card(style="background-image: url('img/brand-2.png')")
+                    p Mizuno
+                .brands__card(style="background-image: url('img/brand-3.png')")
+                    p Stiga
+                .brands__card(style="background-image: url('img/brand-4.png')")
+                    p Donic
+                .brands__card(style="background-image: url('img/brand-5.png')")
+                    p Yasaka
+                .brands__card(style="background-image: url('img/brand-1.png')")
+                    p Butterfly
+                .brands__card(style="background-image: url('img/brand-2.png')")
+                    p Mizuno
+                .brands__card(style="background-image: url('img/brand-3.png')")
+                    p Stiga
+                .brands__card(style="background-image: url('img/brand-4.png')")
+                    p Donic
+                .brands__card(style="background-image: url('img/brand-5.png')")
+                    p Yasaka
+                .brands__card(style="background-image: url('img/brand-1.png')")
+                    p Butterfly
+                .brands__card(style="background-image: url('img/brand-2.png')")
+                    p Mizuno
+                .brands__card(style="background-image: url('img/brand-3.png')")
+                    p Stiga
+                .brands__card(style="background-image: url('img/brand-4.png')")
+                    p Donic
+                .brands__card(style="background-image: url('img/brand-5.png')")
+                    p Yasaka
+    include include/footer
+    // Modal
+    #backCall.modal.fade(tabindex='-1' role='dialog' aria-labelledby='backCallLabel')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='23px' height='23px')
+                            path(fill-rule='evenodd' fill='rgb(255, 255, 255)' d='M23.001,21.563 L21.564,23.001 L11.500,12.937 L1.436,23.001 L-0.001,21.563 L10.062,11.500 L-0.001,1.436 L1.436,-0.002 L11.500,10.062 L21.564,-0.002 L23.001,1.436 L12.938,11.500 L23.001,21.563 Z')
+                    img(src="img/telephone.png" alt)
+                    h4.modal-title Обратный звонок
+                .modal-body
+                    input(type="text" placeholder="Ваше имя")
+                    input(type="text" placeholder="Телефон")
+                .modal-footer
+                    a.btn.btn-lg.btn-blue(href='#') Заказать
+

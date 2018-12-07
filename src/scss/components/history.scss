@@ -1,0 +1,122 @@
+.history {
+  .panel {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .panel-heading {
+    align-items: center;
+    background-color: rgba(184, 205, 231, .5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+
+    @media screen and (max-width: 767px) {
+      align-items: flex-start;
+      flex-direction: column;
+      line-height: 18px;
+      padding-left: 15px;
+    }
+
+    .btn {
+      box-shadow: none;
+      color: #fff;
+    }
+  }
+
+  .panel-body {
+    border: 0 !important;
+    padding: 20px 0;
+  }
+
+  &__details {
+    color: #101314;
+    margin-right: 40px;
+    span {
+      font-weight: bold;
+
+      &.status {
+        color: #18941e;
+      }
+
+      &.sum {
+        color: #1d61b2;
+      }
+    }
+  }
+
+  &__container {
+    align-items: center;
+    border: 1px solid rgba(29, 97, 178, .2);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    img {
+      display: block;
+      height: 100px;
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      text-decoration: none;
+      top: 5px;
+    }
+  }
+
+  &__description {
+    margin-left: 15px;
+
+    @media screen and (max-width: 767px) {
+      margin: 10px 15px;
+    }
+
+    .btn {
+      font-size: 17px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    & > p {
+      color: #505050;
+      margin-bottom: 0;
+
+
+      &.price {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 36px;
+      }
+    }
+
+    & > span {
+      &.first-price,
+      &.first-price + span {
+        font-size: 16px;
+        opacity: .5;
+      }
+
+      &.first-price + span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__product-info {
+    margin-top: 15px;
+
+    p {
+      color: #7c7c7c;
+      margin-bottom: 0;
+    }
+  }
+}

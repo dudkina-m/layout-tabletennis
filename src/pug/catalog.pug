@@ -1,0 +1,39 @@
+extends root/layout
+
+block container
+    include include/header
+    .content
+        .container
+            .row
+                .sidebar.col-md-3
+                    include include/categories-menu
+                .main-content.col-md-9(style='padding: 0 30px;')
+                    ul.breadcrumb
+                        li
+                            a(href='/') Главная
+                        |  /
+                        li.active Butterfly
+                    h1 Butterfly
+                    .sort
+                        .sort__by
+                            | Сортировать по:
+                            a(href='#' title='цена') цене
+
+                        .sort__pages
+                            | Показывать по:
+                            a(href='#' title='9') 9
+                            a(href='#' title='18') 18
+                            a(href='#' title='36') 36
+                            a(href='#' title='Показать все') Показать все
+                        .clr
+                    .filter
+                        .filter__group
+                            input(type="text" placeholder="Цена от")
+                            input(type="text" placeholder="Цена до")
+                            select.filter__select
+                                option(disabled selected) Бренд
+
+                        a.filter__show-all(href="#") Показать все фильтры
+
+
+    include include/footer

@@ -1,0 +1,104 @@
+.basket {
+  &__tabs {
+    border: 0;
+    width: 100%;
+
+    @media screen and (max-width: 1199px) {
+      display: block !important;
+    }
+
+    li {
+      &:not(:first-child) {
+        padding-left: 30px;
+
+        @media screen and (max-width: 1199px) {
+          padding-left: 0;
+        }
+      }
+
+      a {
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        font-size: 16px;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      &.active,
+      &.completed {
+        a,
+        a:focus,
+        a:active,
+        a:hover {
+          background-color: transparent;
+          border: 0;
+          font-weight: bold;
+
+          .basket__step {
+            background-color: #1d61b2;
+            color: #fff;
+            font-weight: 700;
+
+            &-name {
+              color: #1d61b2;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__steps {
+    .tab-content {
+      clear: both;
+      padding-top: 25px;
+    }
+  }
+
+  &__step {
+    border: 1px solid #1d61b2;
+    border-radius: 5px;
+    color: #1d61b2;
+    padding: 5px 15px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1199px) {
+      border-color: #fff;
+      color: #fff;
+    }
+
+
+    &-name {
+      color: #1d61b2;
+      margin-left: 10px;
+
+      @media screen and (max-width: 1199px) {
+        color: #fff;
+      }
+    }
+  }
+
+  &__next {
+    background-color: #7d0512;
+    background-image: linear-gradient(#f53e51, #bb1d2f);
+    border-radius: 6px;
+    box-shadow: 0 4px 0 #7d0512, 0 6px 5px #dea2a9;
+    color: #fff;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    padding: 10px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: #bb1d2f;
+      color: #fff;
+    }
+  }
+}
