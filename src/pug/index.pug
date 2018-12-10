@@ -54,17 +54,24 @@ block container
                     li.last
                         a(href='#') Скидки
             .categories
-                ul.nav.nav-tabs(role='tablist')
+                ul.nav.nav-tabs.hidden-xs.hidden-sm.hidden-md(role='tablist')
                     li.active(role='presentation')
-                        a(href='#recommnded' aria-controls='recommnded' role='tab' data-toggle='tab') Мы рекомендуем
+                        a(href='#recommended' aria-controls='recommended' role='tab' data-toggle='tab') Мы рекомендуем
                     li(role='presentation')
                         a(href='#new' aria-controls='new' role='tab' data-toggle='tab') Новинки
                     li(role='presentation')
                         a(href='#sale-hits' aria-controls='sale-hits' role='tab' data-toggle='tab') Хиты продаж
                     li(role='presentation')
                         a(href='#sales' aria-controls='sales' role='tab' data-toggle='tab') Скидки
+                select#mobTabs.dropdown.hidden-lg(role='presentation')
+                    option(value='#recommended' aria-controls='recommended' role='tab' data-toggle='tab') Мы рекомендуем
+                    option(value='#new' aria-controls='new' role='tab' data-toggle='tab') Новинки
+                    option(value='#sale-hits' aria-controls='sale-hits' role='tab' data-toggle='tab') Хиты продаж
+                    option(value='#sales' aria-controls='sales' role='tab' data-toggle='tab') Скидки
+
+
                 .tab-content
-                    #recommnded.tab-pane.fade.in.active(role='tabpanel')
+                    #recommended.tab-pane.fade.in.active(role='tabpanel')
                         .wrapper
                             - for (var i = 0; i < 4; i++) {
                             .shk-item.shk-item_sale(data-text="-25%")

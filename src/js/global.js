@@ -25,6 +25,11 @@ $(document).ready(function () {
     basketBtns();
   }
 
+  $('#mobTabs').change(function (e) {
+    $('.tab-pane').removeClass('in active');
+    $(e.target.value).addClass('in active');
+  });
+
   $('#editPersonal').click(function () {
     $(this).parents('.personal__content').toggleClass('edit');
     if ($(this).text() === 'Сохранить') {
@@ -94,6 +99,14 @@ $(document).ready(function () {
         items: 4
       }
     }
+  });
+
+  $('.basket__next').click(function () {
+    //$(active).parent('.active').addClass('completed');
+    let active = $('.basket__steps li.active + li a')[0];
+    $('.basket__steps li').removeClass('active');
+    $(active).parent('li').addClass('active');
+    basketBtns();
   });
 
   $('.products-carousel[data-items="3"]').owlCarousel({
@@ -167,6 +180,12 @@ $(document).ready(function () {
         loop: false
       }
     }
+  });
+
+  $('.fotoblock__link').click(function () {
+    const src = $(this).attr('data-src');
+    $('.single_image').attr('href', src);
+    $('.single_image img').attr('src', src);
   });
 
   $('.fotoblock > a').fancybox({
@@ -288,14 +307,4 @@ function basketBtns() {
       break;
     }
   }
-
-  $('.basket__next').each(function () {
-    $(this).click(function () {
-      $(active).parent('.active').addClass('completed');
-      active = $('.basket__steps li.active + li a')[0];
-      $('.basket__steps li.completed').removeClass('active');
-      $(active).parent('li').addClass('active');
-      basketBtns();
-    });
-  });
 }

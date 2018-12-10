@@ -6,6 +6,10 @@
     top: 30%;
     width: 100%;
 
+    @media screen and (max-width: 767px) {
+      padding-left: 30px;
+    }
+
     h1 {
       border-bottom: 1px solid #fff;
       color: #fff;

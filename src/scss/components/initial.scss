@@ -343,6 +343,7 @@ a:hover {
 .nav li a:hover,
 .nav li a:focus {
   background-color: transparent;
+  color: #5c5c5c;
   text-decoration: none;
 }
 
@@ -562,6 +563,12 @@ a:hover {
 .slider .owl-item li img {
   display: inline-block;
   max-width: 100%;
+
+  @media screen and (max-width: 767px) {
+    height: 250px;
+
+    object-fit: cover;
+  }
 }
 
 .slider .owl-carousel .owl-item li {
@@ -589,6 +596,10 @@ a:hover {
   position: absolute;
   text-align: center;
   width: 100%;
+
+  @media screen and (max-width: 767px) {
+    bottom: 30px;
+  }
 }
 
 .slide-txt {
@@ -1253,7 +1264,14 @@ a:hover {
   text-align: center;
 }
 
-.fotoblock a img {
+.fotoblock a.single_image img {
+  height: 250px;
+  width: 100%;
+
+  object-fit: contain;
+}
+
+.fotoblock__thumbnails a img {
   display: inline-block;
   max-width: 390px;
   width: 100%;
@@ -1737,7 +1755,6 @@ div.pagination__control {
     display: flex;
     flex-wrap: wrap;
   }
-
 }
 
 .basket table thead tr {
@@ -1796,10 +1813,10 @@ div.pagination__control {
   width: 100%;
 
   @media screen and (max-width: 539px) {
-    width: auto;
-    height: 120px;
     display: block;
+    height: 120px;
     margin: 0 auto;
+    width: auto;
   }
 }
 
