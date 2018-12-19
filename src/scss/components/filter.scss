@@ -52,13 +52,14 @@
   &__group {
     display: flex;
 
-    .wrap {
+    &.wrap {
       flex-wrap: wrap;
       margin-bottom: 8px;
     }
 
     .form__group {
-      margin-right: 15px;
+      margin-bottom: 0;
+      margin-right: 30px;
       width: max-content;
     }
 

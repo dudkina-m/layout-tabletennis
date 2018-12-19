@@ -374,6 +374,11 @@ a:hover {
 .entry {
   float: right;
   padding: 10px 15px;
+
+  @media screen and (max-width: 500px) {
+    margin: 0 !important;
+    padding: 10px;
+  }
 }
 
 .entry .btn {

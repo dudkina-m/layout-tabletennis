@@ -45,6 +45,35 @@ block container
                                     .form__group
                                         input#with-composite(type='checkbox' name='construction' value='Наличными')
                                         label(for='with-composite') С композитом
+                                p.filter__type Тип основания
+                                    .filter__group.wrap
+                                        .form__group
+                                            input#off-plus(type='checkbox' name='fundamental-type' value='Наличными')
+                                            label(for='off-plus') OFF+
+                                        .form__group
+                                            input#off(type='checkbox' name='fundamental-type' value='Наличными')
+                                            label(for='off') OFF
+                                        .form__group
+                                            input#off-minus(type='checkbox' name='fundamental-type' value='Наличными')
+                                            label(for='off-minus') OFF-
+                                        .form__group
+                                            input#off-off-minus(type='checkbox' name='fundamental-type' value='НаличныOFF/ми')
+                                            label(for='off-off-minus') OFF/OFF-
+                                        .form__group
+                                            input#all-plus(type='checkbox' name='fundamental-type' value='НаличныOFF/ми')
+                                            label(for='all-plus') ALL+
+                                        .form__group
+                                            input#all(type='checkbox' name='fundamental-type' value='НаличныOFF/ми')
+                                            label(for='all') ALL
+                                        .form__group
+                                            input#def-all-plus(type='checkbox' name='fundamental-type' value='НаличныOFF/ми')
+                                            label(for='def-all-plus') DEF/ALL+
+                                        .form__group
+                                            input#def(type='checkbox' name='fundamental-type' value='НаличныOFF/ми')
+                                            label(for='def') DEF
+                                        .form__group
+                                            input#def-plus(type='checkbox' name='fundamental-type' value='НаличныOFF/ми')
+                                            label(for='def-plus') DEF+
 
 
                     .wrapper(style="clear: both")
