@@ -64,6 +64,11 @@ $(document).ready(function () {
     }
   });
 
+  $('.filter__show-all').click(function (e) {
+    e.preventDefault();
+    $('.filter__container').slideToggle(400);
+  });
+
   $('.slider').owlCarousel({
     items: 1,
     nav: true,

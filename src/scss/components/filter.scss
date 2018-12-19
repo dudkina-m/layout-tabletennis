@@ -13,6 +13,24 @@
     flex-direction: column;
   }
 
+  &__container {
+    background: #cbdcef;
+    border-radius: 3px;
+    color: #105192;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    padding: 7px 10px;
+
+    .filter__type {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    label {
+      font-size: 12px;
+    }
+  }
+
   &__show-all {
     color: #fff;
 
@@ -34,13 +52,23 @@
   &__group {
     display: flex;
 
-    input,
+    .wrap {
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .form__group {
+      margin-right: 15px;
+      width: max-content;
+    }
+
+    input[type='text'],
     select {
       height: 30px;
       margin-right: 5px;
     }
 
-    input {
+    input[type='text'] {
       padding: 0 5px;
 
       &::placeholder {

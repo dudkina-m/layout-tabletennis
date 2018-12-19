@@ -7,7 +7,7 @@ block container
             .row
                 .sidebar.col-md-3
                     include include/categories-menu
-                .main-content.col-md-9(style='padding: 0 30px;')
+                .main-content.col-md-9(style='padding: 0 15px;')
                     ul.breadcrumb
                         li
                             a(href='/') Главная
@@ -34,6 +34,127 @@ block container
                                 option(disabled selected) Бренд
 
                         a.filter__show-all(href="#") Показать все фильтры
+                    .filter__container(style="display: none")
+                        .row
+                            .col-xs-12
+                                p.filter__type Конструкция
+                                .filter__group.wrap
+                                    .form__group
+                                        input#without-composite(type='checkbox' name='construction' value='Наличными')
+                                        label(for='without-composite') Без композита
+                                    .form__group
+                                        input#with-composite(type='checkbox' name='construction' value='Наличными')
+                                        label(for='with-composite') С композитом
+
+
+                    .wrapper(style="clear: both")
+                        - for (var i = 0; i < 4; i++) {
+                        .shk-item.shk-item_sale(data-text="-25%")
+                            a.shk-item__star.fa.fa-star(href="#")
+                            .shk-item__img
+                                a(href='#' title='Чехол BUTTERFLY 1950')
+                                    img(src='img/product-img.jpg' alt='Gergely Alpha')
+                                .shk-item__brend Накладки Butterfly
+                                a.product__text(href='product-card.html') Gergely Alpha
+                                .shk-item__price.fake
+                                    // no need to add events, but need to add price data (only for layout)
+                                    span.price_left
+                                        span.shk-price 9 540
+                                        |  Р
+                                    button В корзину
+                            .shk-item__extra
+                                .shk-item__property
+                                    span Цвет: #[br]
+                                    .shk-item__choice
+                                        input(id="color-red" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-red") красный
+                                    .shk-item__choice.disabled
+                                        input(id="color-black" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-black") черный
+                                    .shk-item__choice.disabled
+                                        input(id="color-blue" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-blue") синий
+                                    .shk-item__choice
+                                        input(id="color-purple" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-purple") фиолетовый
+                                .shk-item__property
+                                    span Форма ручки: #[br]
+                                    .shk-item__choice
+                                        input(id="form1" type="radio" name="color")
+                                        label.shk-item__choice-label(for="form1") AN
+                                    .shk-item__choice
+                                        input(id="form2" type="radio" name="color")
+                                        label.shk-item__choice-label(for="form2") FL
+                                    .shk-item__choice
+                                        input(id="form3" type="radio" name="color")
+                                        label.shk-item__choice-label(for="form3") ST
+                                .shk-item__property
+                                    span Количество:
+                                    .shk-item__count
+                                        button.dec -
+                                        input(type="number" min="1" max="100" value="1")
+                                        button.inc +
+                                .shk-item__price-first
+                                    span.line-through 24 360 Р
+                                    span -25%
+                                .shk-item__price
+                                    span.price_left
+                                        span.shk-price 9 540
+                                        |  Р
+                                    button В корзину
+                        -}
+                        - for (var i = 0; i < 4; i++) {
+                        .shk-item.shk-item_new(data-text="Новинка")
+                            a.shk-item__star.shk-item__star_chosen.fa.fa-star(href="#")
+                            .shk-item__img
+                                a(href='#' title='Чехол BUTTERFLY 1950')
+                                    img(src='img/product-img.jpg' alt='Gergely Alpha')
+                                .shk-item__brend Накладки Butterfly
+                                a.product__text(href='product-card.html') Gergely Alpha
+                                .shk-item__price.fake
+                                    // no need to add events, but need to add price data (only for layout)
+                                    span.price_left
+                                        span.shk-price 9 540
+                                        |  Р
+                                    button В корзину
+                            .shk-item__extra
+                                .shk-item__property
+                                    span Цвет: #[br]
+                                    .shk-item__choice
+                                        input(id="color-red1" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-red1") красный
+                                    .shk-item__choice.disabled
+                                        input(id="color-black1" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-black1") черный
+                                    .shk-item__choice.disabled
+                                        input(id="color-blue1" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-blue1") синий
+                                    .shk-item__choice
+                                        input(id="color-purple1" type="radio" name="color")
+                                        label.shk-item__choice-label(for="color-purple1") фиолетовый
+                                .shk-item__property
+                                    span Форма ручки: #[br]
+                                    .shk-item__choice
+                                        input(id="form11" type="radio" name="color")
+                                        label.shk-item__choice-label(for="form11") AN
+                                    .shk-item__choice
+                                        input(id="form21" type="radio" name="color")
+                                        label.shk-item__choice-label(for="form21") FL
+                                    .shk-item__choice
+                                        input(id="form31" type="radio" name="color")
+                                        label.shk-item__choice-label(for="form31") ST
+                                .shk-item__property
+                                    span Количество:
+                                    .shk-item__count
+                                        button.dec -
+                                        input(type="number" min="1" max="100" value="1")
+                                        button.inc +
+                                .shk-item__price
+                                    span.price_left
+                                        span.shk-price 9 540
+                                        |  Р
+                                    button В корзину
+                        -}
 
 
     include include/footer
