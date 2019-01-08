@@ -41,10 +41,12 @@
                 .col-md-5.col-xs-12
                     .phone
                         i.fa.fa-phone
-                        span 8 495
-                        |  772-21-18 /
-                        span 8 499
-                        |  975-50-91
+                        a(href="tel:84957722118")
+                            span 8 495
+                            |  772-21-18 /
+                        a(href="tel:84999755091")
+                            span 8 499
+                            |  975-50-91
         .toolbar
             form.toolbar__search(action='#' method='get')
                 .toolbar__search-row
@@ -55,11 +57,9 @@
                             option(disabled selected) Поиск по категориям
                     .toolbar__search-cell
                         button(type='submit') Найти
-            .toolbar__basket
+            a.toolbar__basket(href="basket.html")
                 .toolbar__basket-row
                     .toolbar__basket-cell
                         i.toolbar__basket-ico
                     #shopCart.toolbar__basket-cell
-                        | В корзине&nbsp;
-                        a(href='basket.html') 2 товара
-                        | &nbsp;на сумму 10000 рублей
+                        | В корзине 2 товара на сумму 10000 рублей

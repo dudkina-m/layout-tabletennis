@@ -427,6 +427,10 @@ a:hover {
   font-weight: bold;
   letter-spacing: -1px;
   margin-top: 12px;
+
+  a {
+    text-decoration: none !important;
+  }
 }
 
 .phone .fa-phone {
@@ -533,6 +537,7 @@ a:hover {
 }
 
 .toolbar__basket-cell {
+  color: #fff !important;
   display: table-cell;
   height: 40px;
   padding: 0 5px;
@@ -772,7 +777,7 @@ a:hover {
 }
 
 .shk-item {
-  background: #fcfcf9;
+  background: #fff;
   border-radius: 6px;
   box-shadow: 0 0 8px rgba(57, 90, 157, .3);
   cursor: default;
@@ -795,7 +800,7 @@ a:hover {
     }
 
     .shk-item__price.fake {
-      display: none;
+      visibility: hidden;
     }
   }
 
@@ -807,7 +812,7 @@ a:hover {
     left: 0;
     padding: 0 15px;
     position: absolute;
-    top: 95%;
+    top: calc(95% - 45px);
     width: 100%;
     z-index: 33;
   }
@@ -1303,7 +1308,7 @@ a:hover {
 
   .shk-item {
     margin: 0;
-    width: auto;
+    width: 100%;
   }
 
   &__choice {
@@ -1326,13 +1331,12 @@ a:hover {
 .description__in {
   position: relative;
 
-  &.sale {
+  &.sale,
+  &.new {
     &:before {
       align-items: center;
       background-color: #d52c3e;
-      border-radius: 50%;
       color: #fff;
-      content: attr(data-text);
       display: flex;
       font-size: 16px;
       font-weight: bold;
@@ -1341,9 +1345,20 @@ a:hover {
       position: absolute;
       right: -30px;
       top: -30px;
-      width: 40px;
       z-index: 3;
     }
+  }
+
+  &.sale:before {
+    border-radius: 50%;
+    content: attr(data-text);
+    width: 40px;
+  }
+
+  &.new:before {
+    border-radius: 5px;
+    content: 'Новинка';
+    padding: 5px;
   }
 
   .shk-item__star {
@@ -1353,6 +1368,10 @@ a:hover {
     position: absolute;
     text-decoration: none;
     top: -10px;
+
+    &_chosen {
+      color: #d52c3e;
+    }
   }
 }
 
@@ -2672,6 +2691,7 @@ select {
 
 .favorites__link {
   color: #216ec1;
+
   span {
     color: #d80027;
   }

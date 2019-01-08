@@ -101,4 +101,33 @@
       color: #fff;
     }
   }
+
+  &__total {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 996px) {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+
+  &__promocode {
+    display: flex;
+
+    @media screen and (max-width: 996px) {
+      margin-bottom: 15px;
+    }
+
+    input {
+      margin-right: 10px;
+      max-width: 150px;
+    }
+
+    .btn {
+      border: none;
+      box-shadow: none;
+    }
+  }
 }

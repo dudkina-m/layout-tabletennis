@@ -30,39 +30,39 @@ block container
                             #basket.tab-pane.fade.in.active(role='tabpanel')
                                 h1 Корзина
                                 #shopCart.basket.table-responsive
-                                    form
-                                        fieldset
-                                            table
-                                                thead
-                                                    tr
-                                                        th &nbsp;
-                                                        th Наименование
-                                                        th Кол-во
-                                                        th Сумма
-                                                        th &nbsp;
-                                                tbody
-                                                    tr
-                                                        td.cell-img
-                                                            a(href='#')
-                                                                img(src='img/product-img.jpg' alt='' width='120')
-                                                        td.txt
-                                                            .basket__brend Спец. предложения
-                                                            .basket__model
-                                                                | СТОЛ BUTTERFLY PLAYBACK ROLLAWAY OUTDOOR 5 мм синий
-                                                                br
-                                                                small
-                                                                div
-                                                                    small
-                                                            .basket__price 47 700 Р
-                                                        td.cell-counter
-                                                            .counter
-                                                                input.shk-count(type='text' size='2' name='count[]' maxlength='3' title='изменить количество' value='1')
-                                                        td
-                                                            | 47 700
-                                                            span Р
-                                                        td.cell-dell
-                                                            a.shk-del(href='#' title='Удалить')
-                                                                img(src='img/basket-del.png' alt='')
+                                    table
+                                        thead
+                                            tr
+                                                th &nbsp;
+                                                th Наименование
+                                                th Кол-во
+                                                th Сумма
+                                                th &nbsp;
+                                        tbody
+                                            tr
+                                                td.cell-img
+                                                    a(href='#')
+                                                        img(src='img/product-img.jpg' alt='' width='120')
+                                                td.txt
+                                                    .basket__brend Спец. предложения
+                                                    .basket__model
+                                                        | СТОЛ BUTTERFLY PLAYBACK ROLLAWAY OUTDOOR 5 мм синий
+                                                        br
+                                                        small
+                                                        div
+                                                            small
+                                                    .basket__price 47 700 Р
+                                                td
+                                                    .shk-item__count
+                                                        button.dec -
+                                                        input(type="number" min="1" max="100" value="1")
+                                                        button.inc +
+                                                td
+                                                    | 47 700
+                                                    span Р
+                                                td.cell-dell
+                                                    a.shk-del(href='#' title='Удалить')
+                                                        img(src='img/basket-del.png' alt='')
 
 
 
@@ -128,8 +128,12 @@ block container
                                     input#payment4(type='radio' name='payment' value='Банковской картой')
                                     label(for='payment4') Банковской картой
                         .basket__total
-                            | Итого 1 товар на сумму:
-                            span(style="font-weight: bold") 47 700 Р
+                            .basket__promocode
+                                input(type="text" placeholder="Промо-код")
+                                button.btn.btn-red Применить код
+                            .basket__common
+                                | Итого 1 товар на сумму:
+                                span(style="font-weight: bold") 47 700 Р
                         a#toDelivery.basket__next(href="#delivery" aria-controls='basket' role='tab' data-toggle='tab') К доставке
                         a#toContacts.basket__next(href="#contacts" aria-controls='delivery' role='tab' data-toggle='tab') К контактам
                         a#toPays.basket__next(href="#pay" aria-controls='contacts' role='tab' data-toggle='tab') К оплате

@@ -6,16 +6,20 @@
     top: 30%;
     width: 100%;
 
-    @media screen and (max-width: 767px) {
-      padding-left: 30px;
-    }
-
-    h1 {
+    .slider__title {
       border-bottom: 1px solid #fff;
       color: #fff;
       display: block;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 28px;
+      margin-bottom: 14px;
       text-decoration: none;
       width: max-content;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding-left: 30px;
     }
   }
 
